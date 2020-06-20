@@ -1,0 +1,609 @@
+﻿<head>
+<meta charset="utf-8" />
+  <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title> Login </title>
+	
+	
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" rel="stylesheet">
+	<!-- optionally if you need to use a theme, then include the theme CSS file as mentioned below -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.6/themes/krajee-svg/theme.css" media="all" rel="stylesheet" type="text/css" />
+<!-- important mandatory libraries -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.6/js/star-rating.min.js" type="text/javascript"></script>
+<!-- optionally if you need to use a theme, then include the theme JS file as mentioned below -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.6/themes/krajee-svg/theme.js"></script>
+
+<!-- optionally if you need translation for your language then include locale file as mentioned below -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.6/js/locales/<lang>.js"></script>
+<link href="https://marcoceppi.github.io/bootstrap-glyphicons/">
+	
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	
+	
+    <link rel="stylesheet"
+          href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	  
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <style>
+	.navbar-inverse{
+	background:black;
+	height:100px;
+	color:white;
+	
+	}
+	.navbar-collapse{
+	background:black;
+	margin-top:27px;
+	color:white
+	}
+	.search-container {
+	
+    float: right;
+	padding: 30px 15px;
+    }
+	.search-container button {
+    float: right;
+    padding: 8px 10px;
+    margin-top: 0px;
+    margin-right: 10px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;}
+	
+    
+	.navbar-toggle{
+	margin-top:30px;
+	}
+	.navbar-nav{
+	font-size:18px;
+	padding:10px;
+	color:red;
+	margin-left:10%
+	}
+    .right{
+	position:absolute;
+	right:5%;
+	top:140px;
+	font-size:19px;
+	margin-top:80px;
+	margin-right:10px;
+	
+	}
+	.righthead{
+	margin-top:30px;
+	}
+	.rightcontent{
+	margin-top:10px;
+	padding:10px;
+	font-size:16px;
+	}
+	.footer {
+	background-color: black;
+    position: relative;
+    left: 0;
+    bottom: -10%;
+    height: 100px;
+    width: 100%;
+	color:white
+	}
+	
+    .footerheader{
+	font-size:25px;
+	}
+	
+    .footercontent{
+	font-size:15px;
+	}
+	
+	.cart{
+	margin-left:90%;background-color:Lightgreen;width:40px;text-align:center;
+	
+	}
+
+.login-container{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.login-form-1{
+    padding: 9%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.9), 0 9px 26px 0 rgba(0, 0, 0, 0.9);
+	color: white
+}
+.login-form-1 h1{
+    text-align: center;
+    margin-bottom:7%;
+	margin-top: 0.1%;
+	color:white;	
+		}
+
+		.btnSubmit{
+    font-weight: 600;
+    width: 50%;
+    color: #282726;
+    background-color: #fff;
+    border: none;
+    border-radius: 1.5rem;
+    padding:2%;
+}
+.btnForgetPwd{
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+}
+.btnForgetPwd:hover{
+    text-decoration:none;
+    color:#fff;
+}
+		.btnRegister{
+    font-weight: 600;
+    width: auto;
+    color: #282726;
+    background-color: #fff;
+    border: none;
+    border-radius: 1rem;
+    padding: 1%;
+	margin-top: 4%
+		}
+		
+	.container.login-container{
+		width: 30%;
+		float: left;
+		margin-left: 10%;
+		margin-top: 7%;
+		}
+	.container.text-info{
+		width: 30%;
+		float: right;
+		margin-right: 20%;
+		color: #000000;
+		font-size:17px;
+		margin-top: 7%;
+		}
+		.backgroundimage{width:100%}
+	@media only screen and (max-width:767px){
+	.right{
+	display:none;
+	}
+    .container.login-container{position:static;margin-left:10%;width:80%} 
+	.container.text-info{position:static;margin-left:10%;width:80%;margin-right:10%}
+.container.login-container{margin-top:150px}
+.container.text-info{margin-top:50px}
+	    .footerheader{
+	font-size:20px;
+	}
+    .footercontent{
+	font-size:11px;
+	width:40%;	
+	}
+.backgroundimage{height:100%;}
+	.search-container{
+	margin-top:-20;
+	float:right;
+	}
+	.cart{
+	float:right;
+	margin-right:10%;background-color:Lightgreen;width:40px;text-align:center;
+	}
+    .footer{
+	background-color: black;
+    position: relative;
+    left: 0;
+    bottom: -30px;
+    height: 100px;
+    width: 100%;
+	float:left;
+	color:white
+	}
+	.backgroundimage{height:100%;width:100%;}
+	}
+	}
+	@media only screen and (max-width:1024px) and (min-width:768px) {
+	.right{
+	font-size:16px;
+	}
+	.rightcontent{
+	font-size:13px;
+	padding:7px;
+	}
+	.navbar-nav{
+	
+	font-size:18px;
+	padding:5px;
+	color:red;
+	margin-left:0px;
+	}
+	.footer{
+	background-color: black;
+    position: absolute;
+    left: 0;
+    bottom: -0%;
+    height: 100px;
+    width: 100%;
+	float:left;
+	color:white
+	}
+	.backgroundimage{height:100%;width:100%;}
+	}
+	
+    </style>
+	<style>
+	hmtl,body{
+	margin:0px;
+	padding:0px;
+	box-sizing:border-box;
+	height:100%
+	}
+	nav{
+	display:flex;
+	justify-content: space-around;
+	align-items:center;
+	min-height:8vh;
+	background-color: rgba(48, 48, 54);
+	font-family: 'Poppins', sans-serif;
+	opacity:0.8;
+	
+	}
+		.dropdown-btn:hover{color:#05f7ff;}
+	.dropdown-menu li a:hover{color:#05f7ff;}	
+	.logo{
+	color: rgb(266, 266, 266);
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-size: 26px;
+	}
+	.nav-links{
+	display:flex;
+	background: #red;
+	justify-content: space-around;
+	width:35%
+	}
+	.nav-links li{
+	list-style:none;
+	}
+	.nav-links a{
+	color: rgb(266, 266, 266);
+	letter-spacing: 3px;
+	font-size: 16px;
+	font-weight:bold;
+	}
+	.burger{
+	display:none;
+	cursor:pointer;
+	}
+	.burger div{
+	width: 25px;
+	height:3px;
+	margin:5px;
+	background-color: rgb(266, 266, 266);
+	transition: all 0.3s ease;
+	}
+	@media screen and (min-width:768px){
+	.nav-links{
+	width:50%
+	}
+	}
+	@media screen and (max-width:767px){
+	body{
+	overflow-X:hidden;
+	}
+	.nav-links{
+	position:absolute;
+	z-index:10;
+	right:0px;
+	height:92vh;
+	top:8vh;
+	background-color:rgba(48, 48, 54);
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	width:50%;
+	transform: translateX(100%);
+	transition: transform 0.5s ease-in;
+	}
+	
+	.burger{
+	display:block;
+	}
+	.nav-active{
+	transform: translateX(0%)}
+	}
+	
+	
+	@keyframes navLinkFade{
+		from{
+		opacity:0;
+		transform: translateX(50px)
+		}
+		to{
+		opacity:1;
+		transform: translateX(0px)
+		}
+		
+	}
+	.toggle .line1{
+	transform: rotate(-45deg) translate(-5px,6px)}
+	.toggle .line2{opacity:0;}
+	.toggle .line3{
+	transform: rotate(45deg) translate(-5px,-6px)}
+	</style>
+	<style>
+	.footer	{		 
+color: #d3d3d3;
+opacity:0.8;
+}	
+.footer .footer-content{
+background: #303036;
+
+}
+.footer .footer-content .footer-section{
+flex:1;
+padding: 25px;
+}
+.footer .footer-content h1, .footer .footer-content h2{
+color: #FFFFFF;
+}
+
+.footer .footer-content .about h1 span{
+color: #05f7ff;
+}
+
+.footer .footer-content .about .contact span {
+display:block;
+font-size:1,1em;
+margin-bottom:8px;}
+
+.footer .footer-content .about .socials a {
+border: 1px solid #A1A4A4;
+width:45px;
+height:41px;
+padding-top:5px;
+margin-right:5px;
+text-align:center;
+display:inline-block;
+font-size:1.3em;
+border-radius:5px;
+transition: all .3s;
+}
+
+.footer .footer-content .about .socials a:hover {
+border:1px solid #FFFFFF;
+color:#FFFFFF;
+transition: all .3s;
+}
+.footer .footer-content .links ul a {
+display:block;
+font-size:1.2em;
+margin-bottom:10px;
+color:#FFFFFF;
+text-decoration:none;border-bottom: 1px solid #05f7ff;
+line-height: 30px;
+}
+
+.footer .footer-content .links ul a:hover {
+color:#05f7ff;
+margin-left:15px;
+transition: all .3s;
+}
+.footer .footer-content .contact-form .contact-input{
+background:#272727;
+color:#bebdbd;
+margin-bottom:10px;
+line-height:1.5rem;
+padding: .9rem 1.4rem;
+border:none;
+}
+.footer .footer-content .contact-form .contact-input:focus{
+background:#lalala}
+.footer .footer-content .contact-form .contact-btn{
+float:right;}
+.footer .footer-boottom{
+background: #343a40;
+color: #686868;
+height:50px;
+width:100%;
+text-align: center;
+
+bottom:0px;
+left:0px;
+padding-top:18px;
+}	
+.btn-big{
+background: #DCE1DF;
+}	
+.btn:hover{
+color:#FFFFFF !important;
+background: #005255;}
+.text-input{
+padding:.7rem 1rem;
+display:block;
+width:100%;
+border-radius:5px;
+
+}
+
+	</style>
+</head>
+<body>
+<img class="backgroundimage" style="position:fixed;opacity:0.8;z-index:-1"src="images/background.png" alt="">
+<nav>
+		<div class="logo">
+		<h4><span style="color:#05f7ff">Big</span>smoke</h4>
+		</div>
+	
+		<ul class="nav-links">
+			<li>
+				<a  href="Homepage.html" style="color:#05f7ff">Trang chủ</a>
+			 </li>
+			 <li >
+				<a href="Categories.html">Thể loại</a>
+			</li>
+			<li>
+				<a  href="News.html"style="color:#05f7ff">Tin tức</a>
+			 </li>
+			 <li >
+				<a  href="https://www.facebook.com/chasinhmedetuitenphuongnam/" >Hỗ trợ</a>
+			 </li>
+			
+			
+				 <li>
+						 <a href="Cart.html" target="blank_page">
+						 <span class="badge pull-right">4</span>
+						 <i class="glyphicon glyphicon-shopping-cart" style="color:#05f7ff"></i>
+						 </a>
+				 </li>
+				 <li class="dropdown">
+						 <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+						role="button" aria-haspopup="true" aria-expanded="false" ><i class="glyphicon glyphicon-user"></i>  Tài khoản <span
+						class="caret"></span>
+						</a>
+						 <ul class="dropdown-menu">
+							 <li><a href="Login.html" target="blank_page">Đăng nhập</a></li>
+							 <li><a href="PersonalInformation.html" target="blank_page">Quên mật khẩu</a></li>
+							 <li><a href="Register.html" target="blank_page">Đăng kí</a></li>
+						</ul>
+				 </li>
+		
+		</ul>
+		
+		 <div class="burger">
+			 <div class="line1"></div>
+			 <div class="line2"></div>
+			 <div class="line3"></div>
+		</div>
+	</nav>
+<script>
+	const navSlide = () =>{
+		const burger = document.querySelector('.burger');
+		const nav = document.querySelector('.nav-links');
+		
+		burger.addEventListener('click', () =>{
+		//Hien nav
+			nav.classList.toggle('nav-active');
+		// hieu ung lop burger	
+			burger.classList.toggle('toggle');
+			});
+		
+		
+		
+	
+	}
+	navSlide();
+	</script>
+
+<div class="allcontainer">
+<div class="container-fluid">
+<div class="container login-container">
+            <div class="row">
+                <div class="login-form-1">
+                    <h1>Login</h1>
+                    
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btnSubmit" value="Login" />
+                        </div>
+                        <div class="form-group">
+                            <a href="AccountInformation.html" class="btnForgetPwd">Forget Password?</a>
+                        </div>
+				</div>
+				</div>
+	</div>
+                    
+
+<div class="container text-info">
+	 <div class="login-form-1">
+	<form action="" method="post">
+	<div class="register-account">
+		<h3><b>Đăng ký tài khoản</b></h3>
+		Nếu bạn vẫn chưa có tài khoản, hãy đăng ký tài khoản ngay. Việc đăng ký tài khoản rất nhanh và dễ.
+	</div>
+	<div class="form-group">
+		<input type="submit" class="btnRegister" value="Đăng ký" />
+	</div>
+		<div class="reason">
+	    <h3><b>Tại sao lại chọn chúng tôi?</b></h3>
+		Chúng tôi cung cấp cho bạn những trải nghiệm tốt nhất. Đồng thời chúng tôi cũng cập nhật sớm nhất những loại game đang nổi hiện tại. Bên cạnh đó chúng tôi còn có những ưu đãi dành cho khách hàng quen thuộc.
+		</div>
+		</form>
+	</div>
+	</div>
+	</div>
+	</div>
+<!--Footer-->
+
+<div class="footer">
+
+<div class="footer-content">
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm-4 col-xs-12">
+<div class="footer-section about">
+<h1 class="logo-text"><span>Big</span>Smoke</h1>
+<p>BigSmoke là một nhà phân phối, tổ chức các sự kiện, 
+các giải đấu cho các tựa game bản quyền lớn nhất khu vực Đông Nam Á.
+</p>
+<div class="contact">
+<span><i class='fas fa-phone-volume' style='color:#05f7ff'></i>&nbsp; 123-456-789</span>
+<span><i class='fas fa-envelope'style='color:#05f7ff'></i>&nbsp; info@bigsmoke.com</span>
+</div>
+<div class="socials">
+<a href="https://www.facebook.com/"><span class="fab fa-facebook-f"style='font-size:24px;color:#05f7ff'></span></a>
+<a href="https://twitter.com/"><i class='fab fa-twitter'style='font-size:24px;color:#05f7ff'></i></a>
+<a href="https://www.instagram.com/"><i class="fab fa-instagram"style='font-size:24px;color:#05f7ff'></i></a>
+<a href="https://www.youtube.com/"><i class="fab fa-youtube"style='font-size:24px;color:#05f7ff'></i></a>
+</div>
+<p style="margin-top:10px; font-size:13px">93 Nguyễn Đình Chiều, Quận 1, TP.Hồ Chí Minh</p>
+</div>
+</div>
+<div class="col-sm-4 col-xs-12">
+<div class="footer-section links" >
+<h2><span style='color:#05f7ff'>Danh</span> mục</h2>
+<br>
+<ul style="font-size:20px;list-style: none;">
+<a href="Homepage.html"><li>Trang chủ</li></a>
+
+<a href="News.html"><li>Tin tức</li></a>
+<a href="https://www.facebook.com/chasinhmedetuitenphuongnam"><li>Hỗ trợ</li></a>
+<a href="Login.html"><li>Tài khoản</li></a>
+</ul>
+</div>
+</div>
+<div class="col-sm-4 col-xs-12">
+<div class="footer-section contact-form">
+<h2><span style='color:#05f7ff'>Contact</span> Us</h2>
+<br>
+<textarea  name="message" class="text-input contact-input" placeholder="Your message..." style="margin-bottom:-10px;"></textarea>
+<br>
+<form action="Footer.html" method="post">
+<input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
+
+<button type="submit" class="btn btn-big contact-btn" >
+<i class='fas fa-envelope'></i></i>
+Send
+</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-boottom">
+	&copy; BigSmoke.com || Designed by PhuongNam
+</div>
+</div>
+<!--//footer-->
+</body>
+

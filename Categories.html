@@ -1,0 +1,898 @@
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Bootstrap 101 Template</title>
+ 
+ <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.6/css/star-rating.min.css" media="all" rel="stylesheet" type="text/css" />
+
+<!-- optionally if you need to use a theme, then include the theme CSS file as mentioned below -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.6/themes/krajee-svg/theme.css" media="all" rel="stylesheet" type="text/css" />
+
+<!-- important mandatory libraries -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.6/js/star-rating.min.js" type="text/javascript"></script>
+
+<!-- optionally if you need to use a theme, then include the theme JS file as mentioned below -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.6/themes/krajee-svg/theme.js"></script>
+
+
+
+<!-- optionally if you need translation for your language then include locale file as mentioned below -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.6/js/locales/<lang>.js"></script>
+<link href="https://marcoceppi.github.io/bootstrap-glyphicons/">
+ 
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+crossorigin="anonymous">
+ <link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+crossorigin="anonymous">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<style>
+	.label{
+	position:absolute;
+	left:auto;
+	right:0px;
+	top:10px;
+	margin-right:25px;
+	box-sizing:border-box;
+	background-color:red;
+	z-index:2;
+	padding:10px;
+	}
+	.discount{
+	background-image:url("https://frontend.tikicdn.com/_new-next/static/img/icons/product/deal-tag@2x.png");
+	position:absolute;
+	left:0px;
+	right:auto;
+	top:10px;
+	margin-left:25px;
+    background-size:48px 40px;
+    color:white	;
+	z-index:2;
+	padding:10px;
+	}
+	.rating-container .caption{          
+                 display:none; 
+             }
+	.rating-container .clear-rating{
+                 
+                 display:none;
+                
+             }	
+
+
+
+
+
+
+.sidenav {
+  height: 1000px;
+  width: 100%;
+  
+  z-index: 1;
+ 
+  
+  overflow-x: hidden;
+  padding: 20px 20px 20px 20px;
+}
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+	.col-sm-6 col-md-4:hover{
+	opacity:1;}		 
+			 
+	.btn-group:hover{color:#f1f1f1}	 
+			 .dropdown-btn:hover{color:#05f7ff;}
+			 	.dropdown-menu li a:hover{color:#05f7ff;}	
+	</style>
+	<style>
+	hmtl,body{
+	margin:0px;
+	padding:0px;
+	box-sizing:border-box;
+	height:100%
+	}
+	nav{
+	display:flex;
+	justify-content: space-around;
+	align-items:center;
+	min-height:8vh;
+	background-color: rgba(48, 48, 54);
+	font-family: 'Poppins', sans-serif;
+	
+	}
+	.logo{
+	color: rgb(266, 266, 266);
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-size: 26px;
+	}
+	.nav-links{
+	display:flex;
+	background: #red;
+	justify-content: space-around;
+	width:35%
+	}
+	.nav-links li{
+	list-style:none;
+	}
+	.nav-links a{
+	color: rgb(266, 266, 266);
+	letter-spacing: 3px;
+	font-size: 16px;
+	font-weight:bold;
+	}
+	.burger{
+	display:none;
+	cursor:pointer;
+	}
+	.burger div{
+	width: 25px;
+	height:3px;
+	margin:5px;
+	background-color: rgb(266, 266, 266);
+	transition: all 0.3s ease;
+	}
+	@media screen and (min-width:768px){
+	.nav-links{
+	width:50%
+	}
+	}
+	@media screen and (max-width:767px){
+	body{
+	overflow-X:hidden;
+	}
+	.carousel-inner p{display:none;}
+	.nav-links{
+	position:absolute;
+	z-index:10;
+	right:0px;
+	height:92vh;
+	top:8vh;
+	background-color:rgba(48, 48, 54);
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	width:50%;
+	transform: translateX(100%);
+	transition: transform 0.5s ease-in;
+	}
+	.backgroundimage{height:100%;width:100%;}
+	
+	.burger{
+	display:block;
+	}
+	.nav-active{
+	transform: translateX(0%)}
+	}
+	
+	
+	@keyframes navLinkFade{
+		from{
+		opacity:0;
+		transform: translateX(50px)
+		}
+		to{
+		opacity:1;
+		transform: translateX(0px)
+		}
+		
+	}
+	.toggle .line1{
+	transform: rotate(-45deg) translate(-5px,6px)}
+	.toggle .line2{opacity:0;}
+	.toggle .line3{
+	transform: rotate(45deg) translate(-5px,-6px)}
+	</style>
+	<style>
+	.footer	{		 
+color: #d3d3d3;opacity:0.8;
+}	
+.footer .footer-content{
+background: #303036;
+
+}
+.footer .footer-content .footer-section{
+flex:1;
+padding: 25px;
+}
+.footer .footer-content h1, .footer .footer-content h2{
+color: #FFFFFF;
+}
+
+.footer .footer-content .about h1 span{
+color: #05f7ff;
+}
+
+.footer .footer-content .about .contact span {
+display:block;
+font-size:1,1em;
+margin-bottom:8px;}
+
+.footer .footer-content .about .socials a {
+border: 1px solid #A1A4A4;
+width:45px;
+height:41px;
+padding-top:5px;
+margin-right:5px;
+text-align:center;
+display:inline-block;
+font-size:1.3em;
+border-radius:5px;
+transition: all .3s;
+}
+
+.footer .footer-content .about .socials a:hover {
+border:1px solid #FFFFFF;
+color:#FFFFFF;
+transition: all .3s;
+}
+.footer .footer-content .links ul a {
+display:block;
+font-size:1.2em;
+margin-bottom:10px;
+color:#FFFFFF;
+text-decoration:none;
+border-bottom: 1px solid #05f7ff;
+line-height: 30px;
+}
+.footer .footer-content .links h2{
+padding-left:35px;
+}
+
+.footer .footer-content .links ul a:hover {
+color:#05f7ff;
+margin-left:15px;
+transition: all .3s;
+}
+.footer .footer-content .contact-form .contact-input{
+background:#272727;
+color:#bebdbd;
+margin-bottom:10px;
+line-height:1.5rem;
+padding: .9rem 1.4rem;
+border:none;
+}
+.footer .footer-content .contact-form .contact-input:focus{
+background:#lalala}
+.footer .footer-content .contact-form .contact-btn{
+float:right;}
+.footer .footer-boottom{
+background: #343a40;
+color: #686868;
+height:50px;
+width:100%;
+text-align: center;
+
+bottom:0px;
+left:0px;
+padding-top:18px;
+}	
+.btn-big{
+background: #DCE1DF;
+}	
+.btn:hover{
+color:#FFFFFF !important;
+background: #005255;}
+.text-input{
+padding:.7rem 1rem;
+display:block;
+width:100%;
+border-radius:5px;
+
+}
+
+	</style>
+</head>
+<body>
+<img class="backgroundimage" style="position:fixed;opacity:0.8;z-index:-1" src="images/background.png" alt="">
+<nav>
+		<div class="logo">
+		<h4><span style="color:#05f7ff">Big</span>smoke</h4>
+		</div>
+	
+		<ul class="nav-links">
+			<li>
+				<a  href="Homepage.html" style="color:#05f7ff">Trang chủ</a>
+			 </li>
+			 <li >
+				<a href="Categories.html">Thể loại</a>
+			</li>
+			<li>
+				<a  href="News.html"style="color:#05f7ff">Tin tức</a>
+			 </li>
+			 <li >
+				<a  href="#" >Hỗ trợ</a>
+			 </li>
+			
+			
+				 <li>
+						 <a href="Cart.html" target="blank_page">
+						 <span class="badge pull-right">4</span>
+						 <i class="glyphicon glyphicon-shopping-cart" style="color:#05f7ff"></i>
+						 </a>
+				 </li>
+				 <li class="dropdown">
+						 <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+						role="button" aria-haspopup="true" aria-expanded="false" ><i class="glyphicon glyphicon-user"></i>  Tài khoản <span
+						class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							 <li><a href="Login.html" target="blank_page">Đăng nhập</a></li>
+							 <li><a href="PersonalInformation.html" target="blank_page">Quên mật khẩu</a></li>
+							 <li><a href="Register.html" target="blank_page">Đăng kí</a></li>
+						</ul>
+				 </li>
+		
+		</ul>
+		
+		 <div class="burger">
+			 <div class="line1"></div>
+			 <div class="line2"></div>
+			 <div class="line3"></div>
+		</div>
+	</nav>
+<script>
+	const navSlide = () =>{
+		const burger = document.querySelector('.burger');
+		const nav = document.querySelector('.nav-links');
+		
+		burger.addEventListener('click', () =>{
+		//Hien nav
+			nav.classList.toggle('nav-active');
+		// hieu ung lop burger	
+			burger.classList.toggle('toggle');
+			});
+		
+		
+		
+	
+	}
+	navSlide();
+	</script>
+ <div class="container-fluid">
+ <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+ <!-- Indicators -->
+ <ol class="carousel-indicators">
+ <li data-target="#carousel-example-generic" data-slide-to="0"
+class="active"></li>
+ <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+ <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+ </ol>
+ <!-- Wrapper for slides -->
+ <div class="carousel-inner" role="listbox">
+ <div class="item active">
+ <img src="images/cdu13x4.jpg" class="d-block w-100" style="opacity:0.7"alt="...">
+ <div class="carousel-caption">
+ <h5 style=" font-size:26px">Call of Duty: Modern Warfare</h5>
+        <p style=" font-size:18px">Tuy cấu hình không đến mức “sát phần cứng” như series Crysis, nhưng đồ họa Call of Duty: Modern Warfare bản PC năm nay đã cho thấy sự cải thiện rõ rệt so với những năm trước.</p>
+ </div>
+ </div>
+ <div class="item">
+ <img src="images/pvz13x4.jpg" class="d-block w-100"style="opacity:0.7"alt="...">
+ <div class="carousel-caption">
+ <h5 style=" font-size:26px">Plants vs zombies 2</h5>
+        <p style=" font-size:18px">Tựa game chiến thuật không thể bỏ qua. Với tựa game plants vs zombies 2, người chơi sẽ phải vượt qua các thử thách trên các hành tinh khác nhau với độ khó tăng dần.</p>
+ </div>
+ </div>
+ <div class="item">
+ <img src="images/GOW13x4.jpg" class="d-block w-100"style="opacity:0.7"alt="...">
+ <div class="carousel-caption">
+ <h5 style=" font-size:26px">God of War</h5>
+ <p style=" font-size:18px">Phần tiếp theo của God of War dường như đang được SIE Santa Monica Studio lên kế hoạch phát triển. Hơn thế nữa, Sony vẫn để ngỏ khả năng đưa phần tiếp...</p>
+ </div>
+ </div>
+ </div>
+ <!-- Controls -->
+ <a class="left carousel-control" href="#carousel-example-generic" role="button"
+data-slide="prev">
+ <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+ <span class="sr-only">Previous</span>
+ </a>
+ <a class="right carousel-control" href="#carousel-example-generic" role="button"
+data-slide="next">
+ <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+ <span class="sr-only">Next</span>
+ </a>
+ </div>
+</div>
+<div class="container-fluid">
+<div class="row">
+ <div class="col-sm-4 col-md-3">
+ <label>Filters</label>
+ </div>
+ </div>
+<div class="row">
+ <div class="col-sm-4 col-md-3">
+ 
+ <div class="sidenav">
+  <button class="dropdown-btn">CATEGORIES 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Action</a>
+    <a href="#">Adventure</a>
+    <a href="#">Survival</a>
+	<a href="#">RTS</a>
+    <a href="#">FTS</a>
+    <a href="#">Defense</a>
+	<a href="#">Simulation</a>
+    <a href="#">Stealth</a>
+    <a href="#">Strategy</a>
+	<a href="#">Survival Horror</a>
+    <a href="#">Fighting Game</a>
+    <a href="#">Rhythm</a>
+	<a href="#">Role-Playing Game</a>
+	<a href="#">Casual</a>
+  </div>
+  <button class="dropdown-btn">FEATURES 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Controller Support</a>
+    <a href="#">Co-op</a>
+    <a href="#">Single Player</a>
+	<a href="#">Multiplayer</a>
+	<a href="#">Windows</a>
+	<a href="#">Mac OS</a>
+  </div>
+</div>
+ <div>
+ </div>
+ </div>
+ <div class="col-sm-8 col-md-9"style="opacity:0.8">
+ <div class="row">
+ <div class="col-sm-6 col-md-4">
+
+  <div class="discount">-75%</div>
+  <div class = "label">New</div>
+ <div class="thumbnail">
+ <img src="300x350/pubg350.jpg" alt="">
+ <div class="add-to-cart">
+ <a href="PUBG.html" target="blank_page" class="glyphicon glyphicon-plus-sign" style="font-size:26px;margin-left:140px"
+ data-toggle="tooltip" data-placement="top" title="Mua ngay"></a>
+ </div>
+<div class="caption">
+<h5 class="pull-right"><s>$30.99</s></h5><br>
+ <h4 class="pull-right">$24.99</h4>
+ <h4>
+ <a href="PUBG.html" target="blank_page">PUBG</a>
+ </h4>
+<p>
+ PUBG ( PLAYERUNKNOWN'S BATTLEGROUNDS) là một game bắn súng mang tính cạnh tranh sống còn.
+ Mọi người chơi sẽ phải chiến đấu với nhau...
+ </p>
+<div class="ratings">
+ <p class="pull-right">
+ <span class="glyphicon glyphicon-time" style="font-size:20px; margin-left:10px"></span>
+ </p>
+<p>
+ 
+<div class="progress">
+  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+    Còn 15 ngày
+  </div>
+</div>
+<input id="input-id" type="text" class="rating" data-size="xs" >
+
+ <a href="PUBG.html" target="blank_page">15 reviews </a>
+ <span style="float:right">09-19/05/2020 </span>
+ </p>
+ </div>
+ </div>
+ </div>
+</div>
+<div class="col-sm-6 col-md-4">
+
+  <div class="discount">-55%</div>
+<div class="thumbnail">
+ <img src="300x350/gta5.jpg" alt="">
+ <div class="add-to-cart">
+ <a href="GTAV.html" target="blank_page" class="glyphicon glyphicon-plus-sign" style="font-size:26px;margin-left:140px"
+ data-toggle="tooltip" data-placement="top" title="Mua ngay"></a>
+ </div>
+<div class="caption">
+<h5 class="pull-right"><s>$45.99</s></h5><br>
+ <h4 class="pull-right">$24.99</h4>
+ <h4>
+ <a href="GTAV.html" target="blank_page">GTA V</a>
+ </h4>
+<p>
+ Grand Theft Auto V (còn được gọi là Grand Theft Auto Năm, GTA 5  hoặc GTA V) là trò chơi
+ video được phát triển bởi Rockstar North thuộc hãng Rockstar Games...
+ </p>
+<div class="ratings">
+ <p class="pull-right">
+ <span class="glyphicon glyphicon-time" style="font-size:20px; margin-left:10px"></span>
+ </p>
+<p>
+ <div class="progress">
+  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+    Còn 6 ngày
+  </div>
+</div>
+<input id="input-id" type="text" class="rating" data-size="xs" >
+ <a href="GTAV.html" target="blank_page">15 reviews </a>
+ <span style="float:right">09-19/05/2020 </span>
+ </p>
+ </div>
+ </div>
+ </div>
+</div>
+<div class="col-sm-6 col-md-4">
+  <div class="discount">-15%</div>
+  <div class = "label">Best Seller</div>
+<div class="thumbnail">
+ <img src="300x350/gow.jpg" alt="">
+ <div class="add-to-cart">
+ <a href="GOW.html" target="blank_page" class="glyphicon glyphicon-plus-sign" style="font-size:26px;margin-left:140px"
+ data-toggle="tooltip" data-placement="top" title="Mua ngay"></a>
+ </div>
+<div class="caption">
+<h5 class="pull-right"><s>$59.99</s></h5><br>
+ <h4 class="pull-right">$24.99</h4>
+ <h4>
+ <a href="GOW.html" target="blank_page">God of War</a>
+ </h4>
+ 
+<p>
+ God of War[a] là trò chơi phiêu lưu hành động góc nhìn thứ ba được Santa Monica Studio 
+ phát triển và Sony Interactive Entertainment (SIE) phát hành....
+ </p>
+<div class="ratings">
+ <p class="pull-right">
+ <span class="glyphicon glyphicon-time" style="font-size:20px; margin-left:10px"></span>
+ 
+ </p>
+<p>
+ <div class="progress">
+  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+    Còn 10 ngày
+  </div>
+</div>
+ <input id="input-id" type="text" class="rating" data-size="xs" >
+ <a href="GOW.html" target="blank_page">15 reviews </a>
+ <span style="float:right">09-19/05/2020 </span>
+ </p>
+ </div>
+ </div>
+ </div>
+</div>
+<div class="col-sm-6 col-md-4">
+  <div class="discount">-75%</div>
+ <div class="thumbnail">
+ <img src="300x350/coduty.jpg" alt="">
+ <div class="add-to-cart">
+ <a href="COD.html" target="blank_page" class="glyphicon glyphicon-plus-sign" style="font-size:26px;margin-left:140px"
+ data-toggle="tooltip" data-placement="top" title="Mua ngay"></a>
+ </div>
+<div class="caption">
+<h5 class="pull-right"><s>$20.99</s></h5><br>
+ <h4 class="pull-right">$24.99</h4>
+ <h4>
+ <a href="COD.html" target="blank_page">Call of Duty</a>
+ </h4>
+<p>
+ Call of Duty là một loạt game thuộc thể loại bắn súng góc nhìn thứ nhất.Phần lớn nội dung
+ của loạt game tập trung vào chủ đề Chiến tranh thế giới lần thứ hai và...
+ </p>
+<div class="ratings">
+ <p class="pull-right">
+ <span class="glyphicon glyphicon-time" style="font-size:20px; margin-left:10px"></span>
+ </p>
+<p>
+<div class="progress">
+  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+    Còn 8 ngày
+  </div>
+  </div>
+<input id="input-id" type="text" class="rating" data-size="xs" >
+<a href="COD.html" target="blank_page">15 reviews </a>
+ <span style="float:right">09-19/05/2020 </span>
+ </p>
+ </div>
+ </div>
+ </div>
+</div>
+<div class="col-sm-6 col-md-4">
+<div class = "label">Top Views</div>
+  <div class="discount">-75%</div>
+ <div class="thumbnail">
+ <img src="300x350/rd2.jpg" alt="">
+ <div class="add-to-cart">
+ <a href="RD.html" target="blank_page"class="glyphicon glyphicon-plus-sign" style="font-size:26px;margin-left:140px"
+ data-toggle="tooltip" data-placement="top" title="Mua ngay"></a>
+ </div>
+<div class="caption">
+<h5 class="pull-right"><s>$30.99</s></h5><br>
+ <h4 class="pull-right">$24.99</h4>
+ <h4>
+ <a href="RD.html" target="blank_page">Red Dead Redemption 2</a>
+ </h4>
+<p>
+ Red Dead Redemption II là thể loại hành động-phiêu lưu góc nhìn thứ ba, do Rockstar San Diego
+ sản xuất và được...
+ </p>
+<div class="ratings">
+ <p class="pull-right">
+ <span class="glyphicon glyphicon-time" style="font-size:20px; margin-left:10px"></span>
+ </p>
+<p>
+<div class="progress">
+  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+    Còn 9 ngày
+  </div>
+  </div>
+<input id="input-id" type="text" class="rating" data-size="xs" >
+<a href="RD.html" target="blank_page">15 reviews </a>
+ <span style="float:right">09-19/05/2020 </span>
+ </p>
+ </div>
+ </div>
+ </div>
+</div>
+<div class="col-sm-6 col-md-4">
+<div class = "label">NEW</div>
+  <div class="discount">-75%</div>
+ <div class="thumbnail">
+ <img src="300x350/3q.jpg" alt="">
+ <div class="add-to-cart">
+ <a href="3Q.html" target="blank_page" class="glyphicon glyphicon-plus-sign" style="font-size:26px;margin-left:140px"
+ data-toggle="tooltip" data-placement="top" title="Mua ngay"></a>
+ </div>
+<div class="caption">
+<h5 class="pull-right"><s>$30.99</s></h5><br>
+ <h4 class="pull-right">$24.99</h4>
+ <h4>
+ <a href="3Q.html" target="blank_page">Total War :Three Kingdoms</a>
+ </h4>
+<p>
+ Total War: Three Kingdoms là một game chiến lược theo lượt pha trộn chiến thuật thời gian 
+ thực sắp tới do hãng Creative Assembly phát triển và Sega phát hành ...
+ </p>
+<div class="ratings">
+ <p class="pull-right">
+ <span class="glyphicon glyphicon-time" style="font-size:20px; margin-left:10px"></span>
+ </p>
+<p>
+<div class="progress">
+  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+    Còn 4 ngày
+  </div>
+  </div>
+<input id="input-id" type="text" class="rating" data-size="xs" >
+<a href="3Q.html" target="blank_page">15 reviews </a>
+ <span style="float:right">09-19/05/2020 </span>
+ </p>
+ </div>
+ </div>
+ </div>
+</div>
+<div class="col-sm-6 col-md-4">
+<div class="thumbnail">
+ <img src="300x350/sekiro.jpg" alt="">
+ <div class="add-to-cart">
+ <a href="#" class="glyphicon glyphicon-plus-sign" style="font-size:26px;margin-left:140px"
+ data-toggle="tooltip" data-placement="top" title="Mua ngay"></a>
+ </div>
+<div class="caption">
+ <h4 class="pull-right">$24.99</h4>
+ <h4>
+ <a href="product.html">Sekiro</a>
+ </h4>
+<p>
+ Sekiro: Shadows Die Twice [a] là một trò chơi điện tử phiêu lưu hành động được phát triển 
+ bởi FromSoftware và được Activision phát hành...
+ </p>
+<div class="ratings">
+ <p class="pull-right">
+ <span class="glyphicon glyphicon-time" style="font-size:20px; margin-left:10px"></span>
+ </p>
+<p>
+<div class="progress">
+  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
+    Còn 15 ngày
+  </div>
+  </div>
+<input id="input-id" type="text" class="rating" data-size="xs" >
+<a href="product.html#comments">15 reviews </a>
+ <span style="float:right">09-19/05/2020 </span>
+ </p>
+ </div>
+ </div>
+ </div>
+</div>
+<div class="col-sm-6 col-md-4">
+<div class="thumbnail">
+ <img src="300x350/l4d2.jpg" alt="">
+ <div class="add-to-cart">
+ <a href="#" class="glyphicon glyphicon-plus-sign" style="font-size:26px;margin-left:140px"
+ data-toggle="tooltip" data-placement="top" title="Mua ngay"></a>
+ </div>
+<div class="caption">
+ <h4 class="pull-right">$24.99</h4>
+ <h4>
+ <a href="product.html">Left 4 Dead 2</a>
+ </h4>
+<p>
+ Left 4 Dead 2 là một trò chơi điện tử thuộc thể loại bắn súng góc nhìn thứ nhất phối hợp có 
+ các yếu tố kinh dị sinh tồn do hai hãng đó là...
+ </p>
+<div class="ratings">
+ <p class="pull-right">
+ <span class="glyphicon glyphicon-time" style="font-size:20px; margin-left:10px"></span>
+ </p>
+<p>
+<div class="progress">
+  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+    Còn 6 ngày
+  </div>
+  </div>
+<input id="input-id" type="text" class="rating" data-size="xs" >
+<a href="product.html#comments">15 reviews </a>
+ <span style="float:right">09-19/05/2020 </span>
+ </p>
+ </div>
+ </div>
+ </div>
+</div>
+<div class="col-sm-6 col-md-4">
+<div class="thumbnail">
+ <img src="300x350/pvz.jpg" alt="">
+ <div class="add-to-cart">
+ <a href="#" class="glyphicon glyphicon-plus-sign" style="font-size:26px;margin-left:140px"
+ data-toggle="tooltip" data-placement="top" title="Mua ngay"></a>
+ </div>
+<div class="caption">
+ <h4 class="pull-right">$24.99</h4>
+ <h4>
+ <a href="product.html">Plants vs Zombies</a>
+ </h4>
+<p>
+ Plants vs Zombies là một trò chơi điện tử dạng phòng thủ tháp được PopCap Games phát triển và
+ phát hành lần đầu cho hệ điều hành Microsoft Windows và OS X...
+ </p>
+<div class="ratings">
+ <p class="pull-right">
+ <span class="glyphicon glyphicon-time" style="font-size:20px; margin-left:10px"></span>
+ </p>
+<p>
+<div class="progress">
+  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+    Còn 7 ngày
+  </div>
+  </div>
+<input id="input-id" type="text" class="rating" data-size="xs" >
+<a href="product.html#comments">15 reviews </a>
+ <span style="float:right">09-19/05/2020 </span>
+ </p>
+ </div>
+ </div>
+ </div>
+</div>
+<div class="col-sm-6 col-md-4">
+<div class="btn-toolbar">
+<div class="btn-group">
+<div class="btn btn-gray">1</div>
+<div class="btn btn-gray">2</div>
+<div class="btn btn-gray">3</div>
+</div>
+</div>
+</div>
+ </div>
+
+ </div>
+ </div><!-- /.container class with content as the id-->
+</div>
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+
+ <!--Footer-->
+
+<div class="footer">
+
+<div class="footer-content">
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm-4 col-xs-12">
+<div class="footer-section about">
+<h1 class="logo-text"><span>Big</span>Smoke</h1>
+<p>BigSmoke là một nhà phân phối, tổ chức các sự kiện, 
+các giải đấu cho các tựa game bản quyền lớn nhất khu vực Đông Nam Á.
+</p>
+<div class="contact">
+<span><i class='fas fa-phone-volume' style='color:#05f7ff'></i>&nbsp; 123-456-789</span>
+<span><i class='fas fa-envelope'style='color:#05f7ff'></i>&nbsp; info@bigsmoke.com</span>
+</div>
+<div class="socials">
+<a href="#"><span class="fab fa-facebook-f"style='font-size:24px;color:#05f7ff'></span></a>
+<a href="#"><i class='fab fa-twitter'style='font-size:24px;color:#05f7ff'></i></a>
+<a href="#"><i class="fab fa-instagram"style='font-size:24px;color:#05f7ff'></i></a>
+<a href="#"><i class="fab fa-youtube"style='font-size:24px;color:#05f7ff'></i></a>
+</div>
+<p style="margin-top:10px; font-size:13px">93 Nguyễn Đình Chiều, Quận 1, TP.Hồ Chí Minh</p>
+</div>
+</div>
+<div class="col-sm-4 col-xs-12">
+<div class="footer-section links" >
+<h2><span style='color:#05f7ff'>Danh</span> mục</h2>
+<br>
+<ul style="font-size:20px;list-style: none;">
+<a href="#"><li>Trang chủ</li></a>
+
+<a href="#"><li>Tin tức</li></a>
+<a href="#"><li>Hỗ trợ</li></a>
+<a href="#"><li>Tài khoản</li></a>
+</ul>
+</div>
+</div>
+<div class="col-sm-4 col-xs-12">
+<div class="footer-section contact-form">
+<h2><span style='color:#05f7ff'>Contact</span> Us</h2>
+<br>
+<textarea  name="message" class="text-input contact-input" placeholder="Your message..." style="margin-bottom:-10px;"></textarea>
+<br>
+<form action="Footer.html" method="post">
+<input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
+
+<button type="submit" class="btn btn-big contact-btn" >
+<i class='fas fa-envelope'></i></i>
+Send
+</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-boottom">
+	&copy; BigSmoke.com || Designed by PhuongNam
+</div>
+</div>
+<!--//footer-->
+ 
+ 
+ 
+	<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+crossorigin="anonymous"></script>
+</body>
+</html>
